@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+}
+
+group 'qlee'
+version '1.0-SNAPSHOT'
+
+
+sourceCompatibility = 1.8
+
+apply plugin: 'application'
+apply plugin: 'java-library'
+
+
+mainClassName = 'com.docx.demo.Application'
+
+
+repositories {
+    maven {
+        url 'http://maven.aliyun.com/nexus/content/groups/public'
+    }
+}
+
+
+jar {
+    manifest.attributes 'Main-Class': 'com.docx.demo.Application'
+}
+
+
+dependencies {
+    compile group: 'org.docx4j', name: 'docx4j', version: '3.3.7'
+}
